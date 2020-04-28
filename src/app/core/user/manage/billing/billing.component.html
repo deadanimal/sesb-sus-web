@@ -1,0 +1,268 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Billing
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-home"> </i> </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-lg-6 col-5 text-right">
+          <!-- {{ momentdate }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <label class="form-control-label">Select Account</label>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountNo"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="221156485623">221156485623</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2">
+              <button class="btn btn-pipeline btn-sm">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- <div class="card-header">
+            <h3 class="mb-0"></h3>
+          </div> -->
+        <div class="card-body">
+          <h3>Current Bill</h3>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">No</th>
+
+                  <th scope="col">Account Holder</th>
+
+                  <th scope="col">Due Date</th>
+
+                  <th scope="col">Total Payable (RM)</th>
+
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+
+              <tbody class="list" *ngIf="accountNo != ''">
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <h4>221156485623</h4>
+                    <p>
+                      Jalan 6/4, Jalan Tun Fuad Stephen, Pusat Bandar Kota
+                      Kinabalu,<br />88000, Kota Kinabalu, Sabah
+                    </p>
+                  </td>
+                  <td>
+                    07 May 2020
+                  </td>
+                  <td>RM 153.65</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      View
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- <div class="card-header">
+            <h3 class="mb-0"></h3>
+          </div> -->
+        <div class="card-body">
+          <h3>Bill History</h3>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">No</th>
+
+                  <th scope="col">Account Holder</th>
+
+                  <th scope="col">Payment Date</th>
+
+                  <th scope="col">Amount (RM)</th>
+
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+
+              <tbody class="list" *ngIf="accountNo != ''">
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <h4>221156485623</h4>
+                    <p>
+                      Jalan 6/4, Jalan Tun Fuad Stephen, Pusat Bandar Kota
+                      Kinabalu,<br />88000, Kota Kinabalu, Sabah
+                    </p>
+                  </td>
+                  <td>
+                    02 April 2020
+                  </td>
+                  <td>RM 150.70</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      View
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <h4>221156485623</h4>
+                    <p>
+                      Jalan 6/4, Jalan Tun Fuad Stephen, Pusat Bandar Kota
+                      Kinabalu,<br />88000, Kota Kinabalu, Sabah
+                    </p>
+                  </td>
+                  <td>
+                    01 Mac 2020
+                  </td>
+                  <td>RM 152.02</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      View
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <h4>221156485623</h4>
+                    <p>
+                      Jalan 6/4, Jalan Tun Fuad Stephen, Pusat Bandar Kota
+                      Kinabalu,<br />88000, Kota Kinabalu, Sabah
+                    </p>
+                  </td>
+                  <td>
+                    02 Feb 2020
+                  </td>
+                  <td>RM 149.70</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      View
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <h4>221156485623</h4>
+                    <p>
+                      Jalan 6/4, Jalan Tun Fuad Stephen, Pusat Bandar Kota
+                      Kinabalu,<br />88000, Kota Kinabalu, Sabah
+                    </p>
+                  </td>
+                  <td>
+                    01 Jan 2020
+                  </td>
+                  <td>RM 159.95</td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      View
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #addaccount let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-body p-0">
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-pipeline">
+          <div class="text-muted text-center">
+            <h2 class="mb-0 text-white">Add Account</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label class="form-control-label">Account Type</label>
+            <select
+              class="form-control form-control-sm"
+              [(ngModel)]="accountType"
+              [ngModelOptions]="{ standalone: true }"
+            >
+              <option value="">Select Account Type</option>
+              <option value="individual">Individual</option>
+              <option value="company">Company</option>
+            </select>
+          </div>
+          <div *ngIf="accountType != ''">
+            <div class="form-group" *ngIf="accountType == 'company'">
+              <label class="form-control-label">Company Register No</label>
+              <input type="text" class="form-control form-control-sm" />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Electricity Account No</label>
+              <input type="text" class="form-control form-control-sm" />
+            </div>
+          </div>
+          <div class="text-center">
+            <button
+              class="btn btn-sm btn-secondary"
+              (click)="c('Close modal')"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

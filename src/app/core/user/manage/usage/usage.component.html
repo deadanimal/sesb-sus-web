@@ -1,0 +1,118 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Usage
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-home"> </i> </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-lg-6 col-5 text-right">
+          <!-- {{ momentdate }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-md-12">
+              <div class="form-group">
+                <label class="form-control-label">Select Account</label>
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountNo"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="221156485623">221156485623</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="form-group">
+                <label class="form-control-label">From</label>
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="fas fa-calendar"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Select date"
+                    class="form-control form-control-sm"
+                    bsDatepicker
+                    [(ngModel)]="fromDate"
+                    [ngModelOptions]="{standalone: true}"
+                    [bsConfig]="{
+                      isAnimated: true,
+                      containerClass: 'theme-default',
+                      dateInputFormat: 'DD-MM-YYYY'
+                    }"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="form-group">
+                <label class="form-control-label">To</label>
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="fas fa-calendar"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Select date"
+                    class="form-control form-control-sm"
+                    bsDatepicker
+                    [(ngModel)]="toDate"
+                    [ngModelOptions]="{standalone: true}"
+                    [bsConfig]="{
+                      isAnimated: true,
+                      containerClass: 'theme-default',
+                      dateInputFormat: 'DD-MM-YYYY'
+                    }"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-pipeline btn-sm" (click)="clickAnalyze()">Analyze</button>
+            <button class="btn btn-pipeline btn-sm">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="showChart">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+              <h3 class="mb-0">Electricity usage from {{ fromDate | date: 'dd-MM-yyyy' }} to {{ toDate | date: 'dd-MM-yyyy' }} </h3>
+            </div>
+        <div class="card-body">
+          <div id="chartdivone" style="width: 100%; height: 400px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

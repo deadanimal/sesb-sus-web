@@ -1,0 +1,171 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Service
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-home"> </i> </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-lg-6 col-5 text-right">
+          <!-- {{ momentdate }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-xs-6">
+              <label class="form-control-label">Select Services</label>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+              <select
+                class="form-control form-control-sm"
+                [(ngModel)]="serviceType"
+                [ngModelOptions]="{ standalone: true }"
+              >
+                <option value="">Please select</option>
+                <option value="1">New Services Connection</option>
+                <option value="2">Move In Start Service</option>
+                <option value="3">Move Out Stop Service</option>
+                <option value="4">Change Tenancy</option>
+                <option value="5">Request Final Bill</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="serviceType == '1'">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">
+            New Services Connection
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Property Address</label>
+                <input type="text" class="form-control form-control-sm mb-3" />
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Postcode</label>
+                <input type="number" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">District</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">State</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Owner Name</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Owner Phone No</label>
+                <input type="tel" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Owner Email</label>
+                <input type="email" class="form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Supporting Document</label>
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input form-control-sm"
+                    id="customFileLang"
+                    lang="en"
+                  />
+                  <label class="custom-file-label" for="customFileLang"
+                    >Supporting Document</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="serviceType == '2'">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">
+            Move In Start Service
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Account Type</label>
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountType"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="individual">Individual</option>
+                  <option value="company">Company</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-12" *ngIf="accountType != ''">
+              <div class="form-group">
+                <label class="form-control-label">Electricity Account No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-xs-12"
+              *ngIf="accountType != '' && accountType == 'company'"
+            >
+              <div class="form-group">
+                <label class="form-control-label">Company Register No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

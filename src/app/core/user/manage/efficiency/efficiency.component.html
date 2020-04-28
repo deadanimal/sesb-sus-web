@@ -1,0 +1,137 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Efficiency
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-home"> </i> </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-lg-6 col-5 text-right">
+          <!-- {{ momentdate }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- <div class="card-header">
+                  <h3 class="mb-0"></h3>
+                </div> -->
+        <div class="card-body">
+          <h3>Efficiency Programs</h3>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">No</th>
+
+                  <th scope="col">Programs</th>
+
+                  <th scope="col">Detail</th>
+
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+
+              <tbody class="list">
+                <tr>
+                  <td>1</td>
+                  <td>RM 40 Electric Bill Rebate Program</td>
+                  <td><a href="#">View</a></td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-pipeline">
+                      Apply
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-xs-12">
+      <div class="card">
+        <!-- <div class="card-header">
+            <h3 class="mb-0">Report Outages</h3>
+          </div> -->
+        <div class="card-body">
+          <h3>Energy Saving Tips</h3>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">No</th>
+
+                  <th scope="col">Tips</th>
+
+                  <th scope="col">Detail</th>
+                </tr>
+              </thead>
+
+              <tbody class="list">
+                <tr>
+                  <td>1</td>
+                  <td>Energy Efficiency Tips</td>
+                  <td><a (click)="showImage('tips')">View</a></td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Energy Efficiency Label</td>
+                  <td><a (click)="showImage('label')">View</a></td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>Usage Cost of Electrical Appliances at Home</td>
+                  <td><a (click)="showImage('usageCost')">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center mb-3">Detail</h3>
+          <img
+            src="../../../../../assets/img/image/electricity-efficiency.jpg"
+            style="width: 100%;"
+            *ngIf="showTips"
+          />
+          <img
+            src="../../../../../assets/img/image/electricity-label.jpg"
+            style="width: 100%;"
+            *ngIf="showLabel"
+          />
+          <img
+            src="../../../../../assets/img/image/electricity-usage-cost.jpg"
+            style="width: 100%;"
+            *ngIf="showUsageCost"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
