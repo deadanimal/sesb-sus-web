@@ -5,6 +5,7 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
+import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
-        path: "user",
-        loadChildren: "./core/user/user.module#UserModule"
+        path: "admin",
+        loadChildren: "./core/admin/admin.module#AdminModule"
       }
     ]
   },
@@ -33,6 +34,16 @@ const routes: Routes = [
       {
         path: "examples",
         loadChildren: "./layouts/auth-layout/auth-layout.module#AuthLayoutModule"
+      }
+    ]
+  },
+  {
+    path: "",
+    component: UserLayoutComponent,
+    children: [
+      {
+        path: "user",
+        loadChildren: "./core/user/user.module#UserModule"
       }
     ]
   },

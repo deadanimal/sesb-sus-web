@@ -1,11 +1,18 @@
-<div class=" main-content bg-custom">
-  <div class=" container mt-6 pb-4">
-    <div class=" row justify-content-center">
-      <div class=" col-lg-5 col-md-7">
-        <div class=" card bg-secondary border-0 mb-0">
-          <div class=" card-body px-lg-5 py-lg-5">
+<div class="main-content bg-custom">
+  <div class="container mt-4 pb-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
             <div class="client-logo-area">
               <img class="client-logo" src="assets/img/brand/sesb-logo.png" />
+            </div>
+            <div class="alert alert-warning" role="alert">
+              <div class="text-center">
+                <strong class="text-center">How to login?</strong><br/>
+                <small>username: admin | password: admin</small><br/>
+                <small>username: user | password: user</small>
+              </div>
             </div>
             <form role="form">
               <div
@@ -15,15 +22,17 @@
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text bg-pipeline">
-                      <i class="ni ni-email-83 text-white"></i>
+                      <i class="fas fa-user text-white"></i>
                     </span>
                   </div>
                   <input
                     class="form-control text-dark"
-                    placeholder="Email"
-                    type="email"
+                    placeholder="Username"
+                    type="text"
                     (focus)="focus = true"
                     (blur)="focus = false"
+                    [(ngModel)]="username"
+                    [ngModelOptions]="{ standalone: true }"
                   />
                 </div>
               </div>
@@ -31,7 +40,7 @@
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text bg-pipeline">
-                      <i class="ni ni-lock-circle-open text-white"></i>
+                      <i class="fas fa-key text-white"></i>
                     </span>
                   </div>
                   <input
@@ -40,6 +49,8 @@
                     type="password"
                     (focus)="focus1 = true"
                     (blur)="focus1 = false"
+                    [(ngModel)]="password"
+                    [ngModelOptions]="{ standalone: true }"
                   />
                 </div>
               </div>

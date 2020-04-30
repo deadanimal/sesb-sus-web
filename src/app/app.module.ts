@@ -11,6 +11,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AppComponent } from "./app.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
+import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
@@ -28,7 +29,7 @@ import { ComponentsModule } from "./components/components.module";
     CollapseModule.forRoot(),
     TagInputModule,
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, UserLayoutComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

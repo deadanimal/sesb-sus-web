@@ -11,13 +11,22 @@ import swal from "sweetalert2";
 export class LoginComponent implements OnInit {
   focus;
   focus1;
+  username: string;
+  password: string;
 
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
   loginSwal() {
-    this.router.navigate(['/user/dashboard']);
+
+    if (this.username == "admin" && this.password == "admin") {
+      this.router.navigate(['/admin/dashboard']);
+    } else if (this.username == "user" && this.password == "user") {
+      this.router.navigate(['/user/dashboard']);
+    } else {
+      alert("Sorry. Please try again.");
+    }
     /* swal
       .fire({
         title: "User Type",

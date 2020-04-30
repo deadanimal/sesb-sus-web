@@ -25,26 +25,23 @@ export interface ChildrenItems2 {
 //Menu Items
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/user/dashboard",
+    path: "/admin/dashboard",
     title: "Dashboard",
     type: "link",
     icontype: "fas fa-chart-bar text-pipeline"
   }, 
   {
-    path: "/user/manage",
+    path: "/admin/manage-admin",
     title: "Manage",
     type: "sub",
     icontype: "fas fa-edit text-pipeline",
     collapse: "manage",
     isCollapsed: true,
     children: [
-      { path: "my-account", title: "My Account", type: "link" },
+      { path: "customer", title: "Customer", type: "link" },
       { path: "billing", title: "Billing", type: "link" },
       { path: "usage", title: "Usage", type: "link" },
-      { path: "service", title: "Service", type: "link" },
-      { path: "outages", title: "Outages", type: "link" },
-      { path: "comparison", title: "Comparison", type: "link" },
-      { path: "efficiency", title: "Efficiency", type: "link" },
+      { path: "report", title: "Report", type: "link" },
     ]
   }
 ];

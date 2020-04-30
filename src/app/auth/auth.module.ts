@@ -6,6 +6,7 @@ import {
   TooltipModule, 
   CollapseModule
 } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AuthRoutes } from './auth.routing';
@@ -23,6 +24,7 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
     TooltipModule.forRoot(),
