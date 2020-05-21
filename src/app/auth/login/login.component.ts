@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 import swal from "sweetalert2";
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 
 @Component({
@@ -14,15 +15,17 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
 
   loginSwal() {
 
     if (this.username == "admin" && this.password == "admin") {
+      this.authService.userRole = 1
       this.router.navigate(['/admin/dashboard']);
     } else if (this.username == "user" && this.password == "user") {
+      this.authService.userRole = 2
       this.router.navigate(['/user/dashboard']);
     } else {
       alert("Sorry. Please try again.");

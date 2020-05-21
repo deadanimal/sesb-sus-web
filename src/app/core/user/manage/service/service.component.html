@@ -168,4 +168,193 @@
       </div>
     </div>
   </div>
+
+  <div class="row" *ngIf="serviceType == '3'">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">
+            Move Out Stop Service
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Account Type</label>
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountType"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="individual">Individual</option>
+                  <option value="company">Company</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-12" *ngIf="accountType != ''">
+              <div class="form-group">
+                <label class="form-control-label">Electricity Account No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-xs-12"
+              *ngIf="accountType != '' && accountType == 'company'"
+            >
+              <div class="form-group">
+                <label class="form-control-label">Company Register No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="serviceType == '4'">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">
+            Change Tenancy
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Account Type</label>
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountType"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="individual">Individual</option>
+                  <option value="company">Company</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-12" *ngIf="accountType != ''">
+              <div class="form-group">
+                <label class="form-control-label">Electricity Account No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-xs-12"
+              *ngIf="accountType != '' && accountType == 'company'"
+            >
+              <div class="form-group">
+                <label class="form-control-label">Company Register No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">Property Address 1</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">Property Address 2 </label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">Postcode</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">City </label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">New Tenant</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="form-control-label">New Tenant Phone No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="serviceType == '5'">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">
+            Final Bill Request
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <div class="form-group">
+                <label class="form-control-label">Account Type</label>
+                <select
+                  class="form-control form-control-sm"
+                  [(ngModel)]="accountType"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <option value="">Please select</option>
+                  <option value="individual">Individual</option>
+                  <option value="company">Company</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xs-12" *ngIf="accountType != ''">
+              <div class="form-group">
+                <label class="form-control-label">Electricity Account No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-xs-12"
+              *ngIf="accountType != '' && accountType == 'company'"
+            >
+              <div class="form-group">
+                <label class="form-control-label">Company Register No</label>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+            <button class="btn btn-sm btn-pipeline">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

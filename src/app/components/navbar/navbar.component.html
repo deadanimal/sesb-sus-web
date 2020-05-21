@@ -37,70 +37,8 @@
         </button>
       </form> -->
       <!-- Navbar links -->
-      <img src="../../../assets/img/brand/sesb-logo.png" style="width: 100px" class="pr-3">
       <ul class="navbar-nav align-items-center ml-md-auto">
-        <li class="nav-item pr-3">
-          <div class="text-sm text-white font-weight-bold" [routerLink]="['/user/dashboard']">Dashboard</div>
-        </li>
-        <li class="nav-item dropdown pr-3" dropdown placement="bottom-left">
-          <a class="nav-link pr-0 dropdown-toggle" role="button" dropdownToggle>
-            <span class="text-sm text-white font-weight-bold">Manage</span>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
-            *dropdownMenu
-          >
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/my-account']"
-              class="dropdown-item"
-            >
-              <span>My Account</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/billing']"
-              class="dropdown-item"
-            >
-              <span>Billing</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/usage']"
-              class="dropdown-item"
-            >
-              <span>Usage</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/service']"
-              class="dropdown-item"
-            >
-              <span>Service</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/outages']"
-              class="dropdown-item"
-            >
-              <span>Outages</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/comparison']"
-              class="dropdown-item"
-            >
-              <span>Comparison</span>
-            </a>
-            <a
-              routerLinkActive="active"
-              [routerLink]="['/user/manage/efficiency']"
-              class="dropdown-item"
-            >
-              <span>Efficiency</span>
-            </a>
-          </div>
-        </li>
+
       </ul>
       <!-- User -->
       <ul class="navbar-nav align-items-center ml-md-0">

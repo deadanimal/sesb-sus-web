@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { ROUTES } from "../../shared/menu/menu-items";
+import { ROUTES, ROUTESUSER } from '../../shared/menu/menu-items';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 var misc: any = {
   sidebar_mini_active: true
@@ -14,15 +15,26 @@ var misc: any = {
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
   public isCollapsed = true;
+  public menu;
 
-  constructor(private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    if (this.authService.userRole == 1) {
+      this.menu = ROUTES
+    }
+    else if (this.authService.userRole == 2) {
+      this.menu = ROUTESUSER
+    }
+    this.menuItems = this.menu.filter(menuItem => menuItem);
     this.router.events.subscribe(event => {
       this.isCollapsed = true;
     });
   }
+  
   onMouseEnterSidenav() {
     if (!document.body.classList.contains("g-sidenav-pinned")) {
       document.body.classList.add("g-sidenav-show");
